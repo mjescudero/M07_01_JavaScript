@@ -1,0 +1,52 @@
+
+
+.contenidor{
+  
+  margin:10 px;
+  padding:20px;
+  background-color:#536cb1;
+  display:flex;
+  border-radius: 15px;
+  flex-direction: column; 
+ 
+  
+}
+.resultat{
+  display:flex;
+  justify-content: flex-end;
+}
+
+.display{
+  margin:10px;
+  padding:5px;
+  flex-basis: 50%;
+  border-radius: 15px;
+  text-align: right;
+  
+}
+
+
+
+.block{
+  border: 5px solid yellow;
+  background:rgb(236, 235, 134);
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+.fila{
+  display:flex;
+  flex-direction: row;
+  justify-content:space-between;
+ 
+  
+}
+.contenidor  button{
+  margin: 5px;
+  flex-basis: 20%;
+  font-size: 25px;
+  border-radius: 15px;
+}

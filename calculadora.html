@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <link type="text/css" href="style.css" rel="stylesheet">
+        <script>
+            function calcular( operacio, num1, num2)
+           {
+              
+               switch (operacio){
+                   case "suma": return num1+num2;
+                   case "multiplica": return num1*num2;
+                   case "resta": return num1-num2;
+                   case "dividir":  if (num2!=0) 
+                                       {return num1/num2}
+                                   else {return "divisio 0 no es possible"};
+                   default: 0;
+
+               }
+           }
+           var display="";
+           var acumulat=0;
+           operacio="";
+           inici= true;
+
+           function mostraNum(numero){
+            
+                document.getElementById("id_display").value= display+numero;
+                display= document.getElementById("id_display").value;
+           }
+
+           function resultat(){
+               if (display!=""&&operacio!="")
+               {
+                    acumulat= calcular(operacio, acumulat, parseInt(display));
+                    document.getElementById("id_display").value= acumulat;
+                    display="";
+              }
+            }
+
+           function suma(){
+            operacio="suma";
+                if (display!="") {
+                    acumulat= calcular(operacio, acumulat, parseInt(display));
+                    document.getElementById("id_display").value= acumulat;
+                    display="";
+                    inici=false;
+                }
+                
+           }
+           function resta(){
+                operacio="resta";
+                if (display!="") {                        
+                    if (!inici){
+                        acumulat= calcular(operacio, acumulat, parseInt(display));
+                        document.getElementById("id_display").value= acumulat;
+                       
+                    } else {
+                        acumulat= parseInt(display); 
+                        inici=false; 
+                    } 
+                    display="";
+                }
+               
+           }
+           
+           function dividir(){
+                operacio="dividir";
+                if (display!="") {
+                   
+                    if (inici==false){
+                        acumulat= calcular(operacio, acumulat, parseInt(display)); 
+                        document.getElementById("id_display").value= acumulat;
+                       
+                    } else  {
+                        acumulat= parseInt(display);  
+                        inici=false;
+                    }
+                    display="";
+                   
+                }
+               
+           }
+           function multiplica(){
+                operacio="multiplica";
+                if (display!="") { 
+                    if (!inici){
+                        acumulat= calcular(operacio, acumulat, parseInt(display));
+                        document.getElementById("id_display").value= acumulat;
+                       
+                    } else  {
+                        acumulat= parseInt(display);  
+                        inici=false;
+                    }
+                    display="";
+                   
+                }
+               
+           }
+
+           function netejar(){
+             display="";
+             acumulat=0;
+             document.getElementById("id_display").value="0";
+             operacio="";
+             inici=true;
+           }
+           
+       </script>
+    </head>
+    <body>
+
+
+        <div class="contenidor">
+            <div class="resultat">
+                <input name="text" class="display" id="id_display" >
+           </div>
+
+           <div class=block>
+                
+                <div class="fila">
+                    <button id="siete" id="siete" onclick="mostraNum(7)">7</button>
+                    <button id="ocho" onclick="mostraNum(8)">8</button>
+                    <button id="nueve" onclick="mostraNum(9)">9
+                    </button><button id="division" onclick="dividir()">/</button>
+                </div>
+
+                <div class="fila"> 
+                    <button id="cuatro"  onclick="mostraNum(4)" >4</button>
+                    <button id="cinco"onclick="mostraNum(5)">5</button>
+                    <button id="seis" onclick="mostraNum(6)">6</button>
+                    <button id="multiplicacion" onclick="multiplica()">*</button>
+                </div>
+
+                <div class="fila">
+                    <button id="uno" onclick="mostraNum(1)">1</button>
+                    <button id="dos" onclick="mostraNum(2)">2</button>
+                    <button id="tres" onclick="mostraNum(3)">3</button>
+                    <button id="resta" onclick="resta()"  >-</button>
+                </div>
+
+                <div class="fila">
+                    <button id="igual" onclick="resultat()">=</button>
+                    <button id="reset" onclick="netejar()">C</button>
+                    <button id="cero"onclick="mostraNum(0)">0</button>
+                    <button id="suma" onclick="suma()">+</button>
+                </div>
+           </div>
+           
+            
+              
+        </div>
+
+
+        
+        <script>
+
+                document.getElementById("id_display").value="0";
+        </script>
+
+    </body>
+</html>

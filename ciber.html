@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <Head>
+
+    </Head>
+    <body>
+        <script>
+             console.log("Hola Mundo")
+             alert("el meu nom és MJ Escudero");
+             
+             var nom = "Maria Jose";
+             var cognom ="Escudero";
+             console.log(nom+" "+cognom);
+             
+             var num1=8;
+             var num2=8;
+             var result= num1+num2;
+             console.log( "La suma entre "+num1 + " i " + num2+ " es: " + result );
+             
+             var notaExamen= 6.7
+             alert( "Molt bé has aprovat l'examen amb "+ notaExamen );
+             
+             var text="Tinc un cotxe de color verd";
+             console.log(text);
+             var text2 = text.replace('verd', 'blau');
+             console.log(text2);
+             console.log(text2.replaceAll('o', 'u'));
+
+             var llista=['taula', 'cadira', 'ordinador', 'llibreta'];
+             for (i=0; i<llista.length;i++){
+                 console.log("l'objecte "+ llista[i]+" es a la posició "+ i)
+
+             }
+             
+             
+             function calculadora( operacio, num1, num2)
+			{
+                
+                switch (operacio){
+                    case "suma": return num1+num2;
+                    case "multiplica": return num1*num2;
+                    case "resta": return num1-num2;
+                    case "dividir":  if (num2!=0) 
+                                        {return num1/num2}
+                                    else {return "divisio 0 no es possible"};
+                    default: 0;
+
+                }
+			}
+			var resultat = calculadora('resta',40,20);
+            alert("40 - 20 és: " + resultat);
+            
+            resultat = calculadora('suma',50,40);
+            alert ("50 + 40 : " + resultat );
+
+            resultat = calculadora('multiplica',50,40);
+            alert ("50 * 40 : " + resultat );
+            
+            resultat = calculadora('dividir',50,40);
+            alert ("50/40 : " + resultat )
+            resultat = calculadora('dividir',50,0);
+            alert ("50 + 40 : " + resultat )
+
+        </script>
+
+    </body>
+</html>
